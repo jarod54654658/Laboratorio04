@@ -9,53 +9,19 @@ namespace Laboratorio04
 {
     public class Ejercicio04
     {
-        public int[] CalcularBilletes(int cantidad[0, 0, 0, 0, 0],  int billetes[100, 50, 20, 5, 1])
+        public int[] CalcularBilletes(int cantidad, int []billetes)
         {
-
-            Console.WriteLine("Ingrese cantidad");
-            cantidad = Convert.ToInt32(Console.ReadLine());
-            if (cantidad>=100)
+            int[] resultado = new int[billetes.Length];
+            for (int i=0; i< billetes.Length; i++)
             {
-                int div = cantidad % 100;
-                int almacenado = cantidad - div;
-                cantidad = cantidad - almacenado;
-
-
+                resultado[i] = cantidad / billetes[i];
+                cantidad = cantidad - (resultado[i]) * billetes[i];
             }
-            if (cantidad >= 50)
-            {
-                int div = cantidad % 50;
-                int almacenado = cantidad - div;
-                cantidad = cantidad - almacenado;
 
 
-            }
-            if (cantidad >= 20)
-            {
-                int div = cantidad % 20;
-                int almacenado = cantidad - div;
-                cantidad = cantidad - almacenado;
-
-
-            }
-            if (cantidad >= 5)
-            {
-                int div = cantidad % 5;
-                int almacenado = cantidad - div;
-                cantidad = cantidad - almacenado;
-
-
-            }
-            if (cantidad >= 1)
-            {
-                int div = cantidad % 1;
-                int almacenado = cantidad - div;
-                cantidad = cantidad - almacenado;
-
-
-            }
+            
            
-            return new int [0, 0, 0, 0, 0, 0] {};
+            return resultado;
         }
     }
 }
